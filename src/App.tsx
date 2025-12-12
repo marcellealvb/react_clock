@@ -15,17 +15,21 @@ export class App extends React.Component<{}, AppState> {
 
   timerId = 0;
 
+  counter = 0;
+
   componentDidMount(): void {
     // Atualiza clockName a cada 3300ms
     this.timerId = window.setInterval(() => {
       const oldName = this.state.clockName;
-      const newName = this.getRandomName();
+
+      this.counter += 1;
+      const newName = `Clock-${this.counter * 3300}`;
 
       this.setState({ clockName: newName });
 
       // eslint-disable-next-line no-console
       console.warn(`Renamed from ${oldName} to ${newName}`);
-    }, 2000);
+    }, 3300);
 
     // Ocultar Clock no clique direito
     document.addEventListener('contextmenu', this.handleRightClick);
