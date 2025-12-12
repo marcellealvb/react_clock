@@ -25,7 +25,7 @@ export class App extends React.Component<{}, AppState> {
 
       // eslint-disable-next-line no-console
       console.warn(`Renamed from ${oldName} to ${newName}`);
-    }, 3300);
+    }, 2000);
 
     // Ocultar Clock no clique direito
     document.addEventListener('contextmenu', this.handleRightClick);
